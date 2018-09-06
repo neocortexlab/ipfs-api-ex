@@ -1,21 +1,20 @@
 # IPFSApi
 
-**TODO: Add description**
+Elixir wrapper for the IPFS REST Api
+
+IPFS is a peer-to-peer hypermedia protocol to make the web faster, safer, and more open.
+Here you can find more information about [IPFS](https://ipfs.io/)
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ipfs_api_ex` to your list of dependencies in `mix.exs`:
+Install
+Add `ipfs_api_ex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:ipfs_api_ex, "~> 0.1.0"}
+    {:ipfs_api_ex, github: "neocortexlab/ipfs-api-ex"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ipfs_api_ex](https://hexdocs.pm/ipfs_api_ex).
-
+and run `$ mix deps.get` to install the dependency.

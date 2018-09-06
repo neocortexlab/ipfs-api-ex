@@ -9,21 +9,16 @@ defmodule IPFSApi do
 
   alias Tesla.Multipart
 
+  def cat_cmd(ref) when is_bitstring(ref), do: get("/cat/" <> ref)
 
-  def cat_cmd(multihash) when is_bitstring(multihash) do
-     {:ok, response} = get("/cat?arg=" <> multihash)
-     response.body
+  def get_cmd(ref) when is_bitstring(ref), do: get("/get/" <> ref)
+
+  def add_cmd(file_path) do
+     post("/add", Multipart.new |> Multipart.add_file(file_path))
   end
 
-  def get_cmd(multihash) when is_bitstring(multihash) do
-     {:ok, response} = get("/get?arg=" <> multihash)
-     response.body
-  end
-
-  def add_cmd(file) do
-   mp = Multipart.new
-        |> Multipart.add_file(file)
-   {:ok, response} = post("/add", mp)
-   response.body
+  def body(result) do
+    {:ok, response} = result
+    response.body
   end
 end
